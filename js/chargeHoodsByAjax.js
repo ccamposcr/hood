@@ -118,7 +118,7 @@ $(document).ready(function(){
 				if(value.username == currentUser)
 	            	html += "<a href='"+ window.location.protocol +"//"+ window.location.host +"/index.php/perfil/'>";
 	            else
-	            	html += "<a href='"+ window.location.protocol +"//"+ window.location.host +"/index.php/perfil/user/"+value.username+"'>";
+	            	html += "<a href='"+ window.location.protocol +"//"+ window.location.host +"/index.php/perfil/show/user/"+value.username+"'>";
 	            html += "<img src='"+ window.location.protocol +"//"+ window.location.host +"/img/userImages/"+value.url_img+"'/>";
 	            html += "<h1>"+value.user+ ' ' +value.last_name+"</h1>";
 	            html += "<span>@"+ value.username +"</span>";
