@@ -51,11 +51,16 @@ class Hood extends CI_Controller {
 		$data["records"] = $this->hood_model->getHoodsByIdUser($this->session->userdata('id'));
 		//print_r($data); die();
 		$j = 0;
+		/*
 		for ($i = $_POST['iStart']; $i < $_POST['iEnd']; $i++) {
-			$arrayInRange["records"][$i] = $data["records"][$j];
+			$arrayInRange["records"][$j] = $data["records"][$i];
 			//echo json_encode ($data["records"][$i]); 
 			$j++;
 			//echo $i; 
+		}*/
+
+		foreach ($data as $i => $row) {
+			$arrayInRange[] = $row;
 		}
 		//die();
 		echo json_encode ($arrayInRange);
