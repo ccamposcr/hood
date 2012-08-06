@@ -223,10 +223,11 @@ $(document).ready(function(){
 						//$(".btnVerMas").show();
 						iStartHoods = countHoods - counterStart;
 						iEndHoods = countHoods - counterEnd;
+						console.log("iStartHoods " +iStartHoods + " iEndHoods " + iEndHoods + " counterEnd " + counterEnd+ "counterStart " + counterStart);
 						getHoods("");
 						counterEnd += hoodsViewPerPage; // Define a Range of 15
 						counterStart += hoodsViewPerPage; // Define a Range of 15
-						console.log("iStartHoods " +iStartHoods + " iEndHoods " + iEndHoods + " counterEnd " + counterEnd+ "counterStart " + counterStart);
+						
 					}
 					else{
 						//$(".btnVerMas").hide();

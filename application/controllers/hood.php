@@ -58,12 +58,26 @@ class Hood extends CI_Controller {
 			$j++;
 			//echo $i; 
 		}*/
-		foreach ($data as $i => $row) {
-			$arrayInRange[] = $row;
+		$j=0;
+		foreach (array_reverse($data["records"]) as $i => $row) {
+			$arrayArranged["records"][$j] = $row;
+			$j++;
 		}
-		//die();
-		//echo json_encode ($arrayInRange);
-		echo json_encode ($data);
+		//($arrayArranged["records"]);
+		//print_r($arrayArranged["records"]); die();
+		$j=0;
+		for ($i = $_POST['iStart']; $i <= $_POST['iEnd']; $i++) {
+			if($i > 0){
+				$arrayInRange["records"][$j] = $arrayArranged["records"][$i];
+			}
+			$j++;
+		}
+		$j=0;
+		foreach (array_reverse($arrayInRange["records"]) as $i => $row) {
+			$arrayInRangeReversed["records"][$j] = $row;
+			$j++;
+		}
+		echo json_encode ($arrayInRangeReversed);
 	}
 	public function getHoodsByUsername(){
 		$username = $this->input->post('username');
